@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Pure Milk Co.</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --primary-white: #ffffff;
+        --secondary-cream: #f5e6cc;
+        --accent-gold: #d4b483;
+        --text-dark: #333333;
+        --text-medium: #666666;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .contact-card {
+        transition: all 0.3s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(212, 180, 131, 0.3);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid rgba(212, 180, 131, 0.3);
+      }
+
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-content.active {
+        max-height: 200px;
+      }
+
+      .faq-toggle {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-toggle.active {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Banner Section -->
+    <section
+      class="relative h-96 flex items-center justify-center"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--secondary-cream) 0%,
+          var(--accent-gold) 100%
+        );
+      "
+    >
+      <div class="text-center" data-aos="fade-up">
+        <h1
+          class="text-5xl md:text-6xl font-bold mb-4"
+          style="color: var(--text-dark)"
+        >
+          Contact Us
+        </h1>
+        <p class="text-xl" style="color: var(--text-medium)">
+          Get in touch with our friendly team
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-20 px-4" style="background-color: var(--primary-white)">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+            Contact Information
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            We're here to help you with any questions
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Phone Card -->
+          <div
+            class="contact-card glass-effect p-8 rounded-2xl text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--accent-gold)"
+            >
+              <i class="fas fa-phone text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+              Phone
+            </h3>
+            <p class="text-lg mb-2" style="color: var(--text-medium)">
+              Call us anytime
+            </p>
+            <p class="text-xl font-semibold" style="color: var(--accent-gold)">
+              +62 21 1234 5678
+            </p>
+            <p class="text-lg" style="color: var(--accent-gold)">
+              +62 812 3456 7890
+            </p>
+          </div>
+
+          <!-- Email Card -->
+          <div
+            class="contact-card glass-effect p-8 rounded-2xl text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--accent-gold)"
+            >
+              <i class="fas fa-envelope text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+              Email
+            </h3>
+            <p class="text-lg mb-2" style="color: var(--text-medium)">
+              Send us a message
+            </p>
+            <p class="text-xl font-semibold" style="color: var(--accent-gold)">
+              info@puremilkco.com
+            </p>
+            <p class="text-lg" style="color: var(--accent-gold)">
+              support@puremilkco.com
+            </p>
+          </div>
+
+          <!-- Address Card -->
+          <div
+            class="contact-card glass-effect p-8 rounded-2xl text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--accent-gold)"
+            >
+              <i class="fas fa-map-marker-alt text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+              Address
+            </h3>
+            <p class="text-lg mb-2" style="color: var(--text-medium)">
+              Visit our office
+            </p>
+            <p class="text-lg font-semibold" style="color: var(--accent-gold)">
+              Jl. Sudirman No. 123
+            </p>
+            <p class="text-lg" style="color: var(--accent-gold)">
+              Jakarta Pusat, 10220
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Location Section -->
+    <section
+      class="py-20 px-4"
+      style="background-color: var(--secondary-cream)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+            Our Location
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            Find us on the map
+          </p>
+        </div>
+
+        <!-- Map Frame -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJl.%20Jend.%20Sudirman%2C%20Jakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1635123456789!5m2!1sen!2sid"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Location Details -->
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass-effect p-8 rounded-2xl inline-block">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+              Location Details
+            </h3>
+            <div class="space-y-2">
+              <p
+                class="text-xl font-semibold"
+                style="color: var(--accent-gold)"
+              >
+                PT. Pure Milk Indonesia
+              </p>
+              <p class="text-lg" style="color: var(--text-medium)">
+                Jl. Jenderal Sudirman No. 123
+              </p>
+              <p class="text-lg" style="color: var(--text-medium)">
+                Karet Tengsin, Tanah Abang
+              </p>
+              <p class="text-lg" style="color: var(--text-medium)">
+                Jakarta Pusat 10220, Indonesia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4" style="background-color: var(--primary-white)">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            Find answers to common questions
+          </p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div
+              class="faq-header p-6 cursor-pointer flex justify-between items-center"
+              onclick="toggleFAQ(0)"
+            >
+              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+                What makes your milk different from others?
+              </h3>
+              <i
+                class="fas fa-chevron-down faq-toggle text-xl"
+                style="color: var(--accent-gold)"
+              ></i>
+            </div>
+            <div class="faq-content px-6 pb-6">
+              <p style="color: var(--text-medium)">
+                Our milk comes from grass-fed cows on local farms, ensuring the
+                highest quality and freshness. We use no artificial additives
+                and maintain strict quality control throughout our production
+                process.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div
+              class="faq-header p-6 cursor-pointer flex justify-between items-center"
+              onclick="toggleFAQ(1)"
+            >
+              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+                Do you offer home delivery?
+              </h3>
+              <i
+                class="fas fa-chevron-down faq-toggle text-xl"
+                style="color: var(--accent-gold)"
+              ></i>
+            </div>
+            <div class="faq-content px-6 pb-6">
+              <p style="color: var(--text-medium)">
+                Yes! We offer daily home delivery service within Jakarta and
+                surrounding areas. Orders placed before 6 PM will be delivered
+                the next morning between 6-9 AM.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div
+              class="faq-header p-6 cursor-pointer flex justify-between items-center"
+              onclick="toggleFAQ(2)"
+            >
+              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+                How long does the milk stay fresh?
+              </h3>
+              <i
+                class="fas fa-chevron-down faq-toggle text-xl"
+                style="color: var(--accent-gold)"
+              ></i>
+            </div>
+            <div class="faq-content px-6 pb-6">
+              <p style="color: var(--text-medium)">
+                Our milk stays fresh for 5-7 days when properly refrigerated. We
+                recommend consuming within 3 days of opening for the best taste
+                and quality.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div
+              class="faq-header p-6 cursor-pointer flex justify-between items-center"
+              onclick="toggleFAQ(3)"
+            >
+              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+                Can I customize my order?
+              </h3>
+              <i
+                class="fas fa-chevron-down faq-toggle text-xl"
+                style="color: var(--accent-gold)"
+              ></i>
+            </div>
+            <div class="faq-content px-6 pb-6">
+              <p style="color: var(--text-medium)">
+                You can mix and match different types of milk, adjust delivery
+                frequency, and even pause deliveries when you're away. Contact
+                our customer service for personalized orders.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <div
+              class="faq-header p-6 cursor-pointer flex justify-between items-center"
+              onclick="toggleFAQ(4)"
+            >
+              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+                What payment methods do you accept?
+              </h3>
+              <i
+                class="fas fa-chevron-down faq-toggle text-xl"
+                style="color: var(--accent-gold)"
+              ></i>
+            </div>
+            <div class="faq-content px-6 pb-6">
+              <p style="color: var(--text-medium)">
+                We accept cash on delivery, bank transfers, credit/debit cards,
+                and popular e-wallet services like GoPay, OVO, and DANA for your
+                convenience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Load header and footer
+      $(document).ready(function () {
+        $("#header-container").load("./header/header.html");
+        $("#footer-container").load("./footer/footer.html");
+      });
+
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // FAQ Toggle Function
+      function toggleFAQ(index) {
+        const content = document.querySelectorAll(".faq-content")[index];
+        const toggle = document.querySelectorAll(".faq-toggle")[index];
+
+        // Close all other FAQs
+        document.querySelectorAll(".faq-content").forEach((item, i) => {
+          if (i !== index) {
+            item.classList.remove("active");
+            document
+              .querySelectorAll(".faq-toggle")
+              [i].classList.remove("active");
+          }
+        });
+
+        // Toggle current FAQ
+        content.classList.toggle("active");
+        toggle.classList.toggle("active");
+      }
+    </script>
+    <script>
+      // Function to initialize mobile menu (called after header is loaded)
+      function initializeMobileMenu() {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && mobileMenu) {
+          console.log("Mobile menu elements found and initializing...");
+
+          // Remove any existing event listeners first
+          const newBtn = mobileMenuBtn.cloneNode(true);
+          mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+
+          // Add event listener to the new button
+          newBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Mobile menu button clicked");
+
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!newBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+
+          // Close menu when clicking on nav links
+          const mobileNavLinks = mobileMenu.querySelectorAll(".nav-link");
+          mobileNavLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+
+          console.log("Mobile menu initialized successfully");
+        } else {
+          console.log("Mobile menu elements not found, retrying...");
+          // Retry after a short delay
+          setTimeout(initializeMobileMenu, 100);
+        }
+      }
+
+      // Load header and footer
+      $(document).ready(function () {
+        // Load header and initialize mobile menu after it's loaded
+        $("#header-container").load(
+          "./header/header.html",
+          function (response, status, xhr) {
+            if (status === "success") {
+              console.log("Header loaded successfully");
+              // Wait a bit for DOM to fully update, then initialize mobile menu
+              setTimeout(initializeMobileMenu, 50);
+            } else {
+              console.log("Error loading header:", status);
+            }
+          }
+        );
+
+        $("#footer-container").load("./footer/footer.html");
+
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>

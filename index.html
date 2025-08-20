@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure Milk Co. - Fill Your Day with Freshness</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Slick Carousel CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --primary-white: #ffffff;
+        --secondary-cream: #f5e6cc;
+        --accent-gold: #d4b483;
+        --text-dark: #333333;
+        --text-medium: #666666;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .parallax-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .moving-reviews {
+        animation: moveLeft 30s linear infinite;
+      }
+
+      .moving-reviews-reverse {
+        animation: moveRight 30s linear infinite;
+      }
+
+      .moving-reviews:hover,
+      .moving-reviews-reverse:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes moveLeft {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes moveRight {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .slick-dots {
+        bottom: 20px;
+      }
+
+      .slick-dots li button:before {
+        color: var(--accent-gold);
+        font-size: 12px;
+      }
+
+      .slick-dots li.slick-active button:before {
+        color: var(--accent-gold);
+      }
+
+      .slick-prev,
+      .slick-next {
+        z-index: 10;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: var(--accent-gold);
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Hero Slider Section -->
+    <section class="relative h-screen">
+      <div class="hero-slider h-full">
+        <div class="relative h-full">
+          <img
+            src="https://images.unsplash.com/photo-1723174713369-d077439feb5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            alt="Fresh Milk"
+            class="hero-image w-full h-full object-cover"
+            data-desktop="https://images.unsplash.com/photo-1723174713369-d077439feb5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            data-mobile="https://images.unsplash.com/photo-1723174713369-d077439feb5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+          >
+            <div class="text-center text-white px-4">
+              <h1 class="text-4xl md:text-7xl font-bold mb-4">
+                Pure Freshness
+              </h1>
+              <p class="text-lg md:text-2xl">Experience the taste of nature</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative h-full">
+          <img
+            src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            alt="Farm Fresh"
+            class="hero-image w-full h-full object-cover"
+            data-desktop="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            data-mobile="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+          >
+            <div class="text-center text-white px-4">
+              <h1 class="text-4xl md:text-7xl font-bold mb-4">Farm to Table</h1>
+              <p class="text-lg md:text-2xl">Direct from our happy cows</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative h-full">
+          <img
+            src="https://images.unsplash.com/photo-1704650311190-7eeb9c4f6e11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            alt="Premium Quality"
+            class="hero-image w-full h-full object-cover"
+            data-desktop="https://images.unsplash.com/photo-1704650311190-7eeb9c4f6e11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80"
+            data-mobile="https://images.unsplash.com/photo-1704650311190-7eeb9c4f6e11?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+          >
+            <div class="text-center text-white px-4">
+              <h1 class="text-4xl md:text-7xl font-bold mb-4">
+                Premium Quality
+              </h1>
+              <p class="text-lg md:text-2xl">Crafted with care and love</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: About Us -->
+    <section
+      id="us"
+      class="py-20 px-4"
+      style="background-color: var(--secondary-cream)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-6xl font-bold mb-6"
+            style="color: var(--text-dark)"
+          >
+            Fill your day with the freshness of pure milk
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            Experience the difference that comes from caring about quality,
+            health, and your daily happiness
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h3
+              class="text-3xl font-semibold mb-6"
+              style="color: var(--text-dark)"
+            >
+              Our Promise to You
+            </h3>
+            <p class="text-lg mb-6" style="color: var(--text-medium)">
+              Every glass of our milk carries the essence of pure countryside
+              freshness. We believe that quality nutrition should never be
+              compromised, which is why our cows graze on the finest pastures
+              and receive the utmost care.
+            </p>
+            <p class="text-lg mb-6" style="color: var(--text-medium)">
+              When you choose our milk, you're not just nourishing your body –
+              you're elevating your mood, boosting your energy, and connecting
+              with the natural goodness that only comes from truly pure,
+              farm-fresh dairy.
+            </p>
+            <button
+              class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+              style="background-color: var(--accent-gold)"
+            >
+              Learn More About Us
+            </button>
+          </div>
+          <div data-aos="fade-left">
+            <img
+              src="https://img.freepik.com/free-photo/group-veterinarians-doctor-checking-health-status-cattle-cows-farm_342744-891.jpg?t=st=1755330209~exp=1755333809~hmac=d3aeb04e827c14c7c4e4d270f64efcdacb9005c68839d6ee0df71e44cf90b7fa&w=1480"
+              alt="Fresh Milk from Happy Cows"
+              class="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Choose Us - Parallax Process Flow -->
+    <section
+      id="why_should_us"
+      class="parallax-section py-20 px-4 relative"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--primary-white) 0%,
+          var(--secondary-cream) 100%
+        );
+      "
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-6"
+            style="color: var(--text-dark)"
+          >
+            Our Quality Process
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            From farm to your table, every step is crafted with precision and
+            care
+          </p>
+        </div>
+
+        <div class="space-y-20">
+          <!-- Process Step 1 -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-8"
+            data-aos="fade-right"
+          >
+            <div class="md:w-1/2">
+              <div class="glass-effect p-8 rounded-2xl shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl"
+                    style="background-color: var(--accent-gold)"
+                  >
+                    1
+                  </div>
+                  <h3
+                    class="text-2xl font-semibold ml-4"
+                    style="color: var(--text-dark)"
+                  >
+                    Happy Cows
+                  </h3>
+                </div>
+                <p style="color: var(--text-medium)">
+                  Our cows roam freely in lush green pastures, enjoying a
+                  natural diet and stress-free environment that directly impacts
+                  the quality and taste of their milk.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <img
+                src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+                alt="Happy Cows"
+                class="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 2 -->
+          <div
+            class="flex flex-col md:flex-row-reverse items-center gap-8"
+            data-aos="fade-left"
+          >
+            <div class="md:w-1/2">
+              <div class="glass-effect p-8 rounded-2xl shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl"
+                    style="background-color: var(--accent-gold)"
+                  >
+                    2
+                  </div>
+                  <h3
+                    class="text-2xl font-semibold ml-4"
+                    style="color: var(--text-dark)"
+                  >
+                    Fresh Milking
+                  </h3>
+                </div>
+                <p style="color: var(--text-medium)">
+                  Using state-of-the-art milking technology, we ensure the
+                  highest hygiene standards while maintaining the natural
+                  goodness and nutritional value of fresh milk.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <img
+                src="https://img.freepik.com/free-photo/cow-milking-facility-mechanized-milking-equipment_1150-12763.jpg?t=st=1755330424~exp=1755334024~hmac=80a707ca8eed54ad6e5867e9577add35d99691cc0956c69b65770c3d339634e3&w=1480"
+                alt="Fresh Milking"
+                class="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 3 -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-8"
+            data-aos="fade-right"
+          >
+            <div class="md:w-1/2">
+              <div class="glass-effect p-8 rounded-2xl shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl"
+                    style="background-color: var(--accent-gold)"
+                  >
+                    3
+                  </div>
+                  <h3
+                    class="text-2xl font-semibold ml-4"
+                    style="color: var(--text-dark)"
+                  >
+                    Quality Testing
+                  </h3>
+                </div>
+                <p style="color: var(--text-medium)">
+                  Every batch undergoes rigorous quality testing to ensure
+                  purity, freshness, and nutritional excellence before it
+                  reaches your family.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <img
+                src="https://img.freepik.com/free-photo/close-up-waiter-with-gloves-mask-work_23-2148645151.jpg?t=st=1755330542~exp=1755334142~hmac=d9a0d90f4c5d03a8593f75f5e9e9752ddbaa4512b79e1cede5fd5d634974a713&w=1480"
+                alt="Quality Testing"
+                class="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 4 -->
+          <div
+            class="flex flex-col md:flex-row-reverse items-center gap-8"
+            data-aos="fade-left"
+          >
+            <div class="md:w-1/2">
+              <div class="glass-effect p-8 rounded-2xl shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl"
+                    style="background-color: var(--accent-gold)"
+                  >
+                    4
+                  </div>
+                  <h3
+                    class="text-2xl font-semibold ml-4"
+                    style="color: var(--text-dark)"
+                  >
+                    Fresh Delivery
+                  </h3>
+                </div>
+                <p style="color: var(--text-medium)">
+                  Our efficient cold-chain delivery system ensures that the milk
+                  reaches you within hours of milking, preserving its natural
+                  freshness and taste.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <img
+                src="https://img.freepik.com/free-photo/ingredient-bags-full-flour_23-2149482571.jpg?t=st=1755330713~exp=1755334313~hmac=3da141f694c414c4e85a889a45b6f0a3a5b78006c1eeade4971f8d591cce49f7&w=1480"
+                alt="Fresh Delivery"
+                class="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Trust & Reviews -->
+    <section
+      id="trust"
+      class="py-20 px-4"
+      style="background-color: var(--primary-white)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-6"
+            style="color: var(--text-dark)"
+          >
+            Trusted by Thousands
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            Join our growing family of satisfied customers
+          </p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid md:grid-cols-3 gap-8 mb-20" data-aos="fade-up">
+          <div
+            class="text-center p-8 rounded-2xl"
+            style="background-color: var(--secondary-cream)"
+          >
+            <div
+              class="text-4xl font-bold mb-2"
+              style="color: var(--accent-gold)"
+            >
+              50,000+
+            </div>
+            <div class="text-lg" style="color: var(--text-dark)">
+              Happy Customers
+            </div>
+          </div>
+          <div
+            class="text-center p-8 rounded-2xl"
+            style="background-color: var(--secondary-cream)"
+          >
+            <div
+              class="text-4xl font-bold mb-2"
+              style="color: var(--accent-gold)"
+            >
+              1M+
+            </div>
+            <div class="text-lg" style="color: var(--text-dark)">
+              Liters Sold
+            </div>
+          </div>
+          <div
+            class="text-center p-8 rounded-2xl"
+            style="background-color: var(--secondary-cream)"
+          >
+            <div
+              class="text-4xl font-bold mb-2"
+              style="color: var(--accent-gold)"
+            >
+              4.9★
+            </div>
+            <div class="text-lg" style="color: var(--text-dark)">
+              Average Rating
+            </div>
+          </div>
+        </div>
+
+        <!-- Moving Reviews -->
+        <div class="overflow-hidden">
+          <div class="moving-reviews flex gap-6 mb-6">
+            <div id="reviews-row-1" class="flex gap-6"></div>
+            <div id="reviews-row-1-duplicate" class="flex gap-6"></div>
+          </div>
+          <div class="moving-reviews-reverse flex gap-6">
+            <div id="reviews-row-2" class="flex gap-6"></div>
+            <div id="reviews-row-2-duplicate" class="flex gap-6"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Carousel JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Function to initialize mobile menu (called after header is loaded)
+      function initializeMobileMenu() {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && mobileMenu) {
+          console.log("Mobile menu elements found and initializing...");
+
+          // Remove any existing event listeners first
+          const newBtn = mobileMenuBtn.cloneNode(true);
+          mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+
+          // Add event listener to the new button
+          newBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Mobile menu button clicked");
+
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!newBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+
+          // Close menu when clicking on nav links
+          const mobileNavLinks = mobileMenu.querySelectorAll(".nav-link");
+          mobileNavLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+
+          console.log("Mobile menu initialized successfully");
+        } else {
+          console.log("Mobile menu elements not found, retrying...");
+          setTimeout(initializeMobileMenu, 100);
+        }
+      }
+
+      // Responsive Image Handler for Hero Section
+      function updateHeroImages() {
+        const heroImages = document.querySelectorAll(".hero-image");
+        const isMobile = window.innerWidth <= 768;
+
+        heroImages.forEach((img) => {
+          const desktopSrc = img.dataset.desktop;
+          const mobileSrc = img.dataset.mobile;
+
+          if (isMobile && img.src !== mobileSrc) {
+            img.src = mobileSrc;
+            console.log("Switched to mobile image:", mobileSrc);
+          } else if (!isMobile && img.src !== desktopSrc) {
+            img.src = desktopSrc;
+            console.log("Switched to desktop image:", desktopSrc);
+          }
+        });
+      }
+
+      // Load header and footer
+      $(document).ready(function () {
+        // Load header and initialize mobile menu after it's loaded
+        $("#header-container").load(
+          "./header/header.html",
+          function (response, status, xhr) {
+            if (status === "success") {
+              console.log("Header loaded successfully");
+              setTimeout(initializeMobileMenu, 50);
+            } else {
+              console.log("Error loading header:", status);
+            }
+          }
+        );
+
+        $("#footer-container").load("./footer/footer.html");
+
+        // Initialize AOS
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+
+        // Initialize Slick Slider
+        $(".hero-slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: true,
+          dotsClass: "slick-dots",
+          customPaging: function (slider, i) {
+            return '<button type="button"></button>';
+          },
+        });
+
+        // Initialize responsive images
+        updateHeroImages();
+
+        // Update images on resize
+        let resizeTimeout;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(updateHeroImages, 250);
+        });
+
+        // Handle orientation change on mobile devices
+        window.addEventListener("orientationchange", function () {
+          setTimeout(updateHeroImages, 100);
+        });
+      });
+
+      // Dummy review data
+      const reviews = [
+        {
+          name: "Wilda Widyaningsih",
+          image:
+            "https://images.unsplash.com/photo-1530254541043-129f4c372200?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 4,
+          text: "The freshest milk I've ever tasted! My kids love it and I feel good knowing it's pure and natural.",
+        },
+        {
+          name: "Chintya Anggita",
+          image:
+            "https://plus.unsplash.com/premium_photo-1661508196384-333e4ebd90db?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 5,
+          text: "Amazing quality and taste. The delivery is always on time and the milk stays fresh for days.",
+        },
+        {
+          name: "Angga Aditya",
+          image:
+            "https://images.unsplash.com/photo-1635789531654-8d0404549bfe?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 5,
+          text: "I switched to Pure Milk Co. and never looked back. The difference in quality is remarkable!",
+        },
+        {
+          name: "Andi Purnama",
+          image:
+            "https://images.unsplash.com/photo-1614772903208-613ed4282ded?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 5,
+          text: "Perfect for my morning coffee and cereal. You can really taste the difference of farm-fresh milk.",
+        },
+        {
+          name: "Kirana Dewi",
+          image:
+            "https://images.unsplash.com/photo-1593143061849-5b6ab3a4f1d4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 4,
+          text: "My family has been drinking this milk for years. Consistently fresh and delicious every time.",
+        },
+        {
+          name: "Abdul Fattah",
+          image:
+            "https://images.unsplash.com/photo-1723256048093-89c49bf87ccf?q=80&w=826&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 5,
+          text: "The best milk in town! Great customer service and the quality is unmatched.",
+        },
+      ];
+
+      // Generate review cards
+      function createReviewCard(review) {
+        const stars = "★".repeat(review.rating);
+        return `
+                <div class="flex-shrink-0 w-80 p-6 rounded-2xl glass-effect">
+                    <div class="flex items-center mb-4">
+                        <img src="${review.image}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold" style="color: var(--text-dark);">${review.name}</div>
+                            <div style="color: var(--accent-gold);">${stars}</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-medium);">"${review.text}"</p>
+                </div>
+            `;
+      }
+
+      // Populate review rows
+      $(document).ready(function () {
+        const reviewsHtml = reviews.map(createReviewCard).join("");
+        $(
+          "#reviews-row-1, #reviews-row-1-duplicate, #reviews-row-2, #reviews-row-2-duplicate"
+        ).html(reviewsHtml);
+      });
+    </script>
+  </body>
+</html>

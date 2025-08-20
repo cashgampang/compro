@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Products - Pure Milk Co.</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Slick Carousel CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --primary-white: #ffffff;
+        --secondary-cream: #f5e6cc;
+        --accent-gold: #d4b483;
+        --text-dark: #333333;
+        --text-medium: #666666;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .neon-glow {
+        box-shadow: 0 0 20px rgba(212, 180, 131, 0.6),
+          0 0 40px rgba(212, 180, 131, 0.4), 0 0 60px rgba(212, 180, 131, 0.2);
+        border: 2px solid var(--accent-gold);
+        transform: scale(1.05);
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .slick-prev,
+      .slick-next {
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--accent-gold) !important;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: white;
+        font-size: 20px;
+      }
+
+      .slick-prev {
+        left: -90px;
+      }
+
+      .slick-next {
+        right: -90px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Banner Section -->
+    <section
+      class="relative h-96 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="./img/product1_compro_clean.jpg"
+          alt="About Us Banner"
+          class="w-full h-full object-cover opacity-80"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+      <div class="relative z-10 text-center text-white" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 mt-32">Products</h1>
+        <p class="text-xl md:text-2xl font-light">
+          Explore the wonders we have created
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 1: Product Showcase -->
+    <section
+      data-aos="fade-up"
+      class="py-20 px-4"
+      style="background-color: var(--primary-white)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="product-showcase">
+          <!-- Product 1: Whole Milk -->
+          <div class="product-slide">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="order-2 md:order-1" data-aos="fade-right">
+                <h2
+                  class="text-4xl font-bold mb-6"
+                  style="color: var(--text-dark)"
+                >
+                  Fat Filled Whey Powder
+                </h2>
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-check-circle text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Rich in natural vitamins and minerals</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-heart text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Perfect for growing children and adults</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-leaf text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >100% natural with no artificial additives</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-clock text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Fresh daily delivery guaranteed</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  style="background-color: var(--accent-gold)"
+                >
+                  Order Now
+                </button>
+              </div>
+              <div class="order-1 md:order-2" data-aos="fade-left">
+                <img
+                  src="./img/product1_compro_clean.jpg"
+                  alt="Premium Whole Milk"
+                  class="rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Low Fat Milk -->
+          <div class="product-slide">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="order-2 md:order-1" data-aos="fade-right">
+                <h2
+                  class="text-4xl font-bold mb-6"
+                  style="color: var(--text-dark)"
+                >
+                   Full Cream Milk Powder
+                </h2>
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-weight text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Reduced fat content for health-conscious families</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-dumbbell text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >High protein for active lifestyles</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-shield-alt text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Maintains all essential nutrients</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-thumbs-up text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Great taste without compromise</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  style="background-color: var(--accent-gold)"
+                >
+                  Order Now
+                </button>
+              </div>
+              <div class="order-1 md:order-2" data-aos="fade-left">
+                <img
+                  src="./img/product2_compro_clean.jpg"
+                  alt="Low Fat Milk"
+                  class="rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Organic Milk -->
+          <div class="product-slide">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="order-2 md:order-1" data-aos="fade-right">
+                <h2
+                  class="text-4xl font-bold mb-6"
+                  style="color: var(--text-dark)"
+                >
+                  Skim Milk Powder
+                </h2>
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-seedling text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Certified organic from grass-fed cows</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-ban text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >No hormones, antibiotics, or pesticides</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-globe text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Environmentally sustainable farming</span
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <i
+                      class="fas fa-star text-2xl mr-4"
+                      style="color: var(--accent-gold)"
+                    ></i>
+                    <span class="text-lg" style="color: var(--text-medium)"
+                      >Premium quality for discerning taste</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  style="background-color: var(--accent-gold)"
+                >
+                  Order Now
+                </button>
+              </div>
+              <div class="order-1 md:order-2" data-aos="fade-left">
+                <img
+                  src="./img/product3_compro_clean.jpg"
+                  alt="Organic Milk"
+                  class="rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Product Cards -->
+    <section
+      class="py-20 px-4"
+      style="background-color: var(--secondary-cream)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+            Choose Your Favorite
+          </h2>
+          <p class="text-xl" style="color: var(--text-medium)">
+            Click on any product to learn more about its benefits
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div
+            class="product-card glass-effect p-6 rounded-2xl text-center"
+            data-product="0"
+          >
+            <img
+              src="./img/product1_compro_clean.jpg"
+              alt="Whole Milk"
+              class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+            />
+            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+              Fat Filled Whey Powder
+            </h3>
+            <p class="text-sm mt-2" style="color: var(--text-medium)">
+              Rich & Creamy
+            </p>
+          </div>
+
+          <div
+            class="product-card glass-effect p-6 rounded-2xl text-center"
+            data-product="1"
+          >
+            <img
+              src="./img/product2_compro_clean.jpg"
+              alt="Low Fat Milk"
+              class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+            />
+            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+              Full Cream Milk Powder
+            </h3>
+            <p class="text-sm mt-2" style="color: var(--text-medium)">
+              Healthy Choice
+            </p>
+          </div>
+
+          <div
+            class="product-card glass-effect p-6 rounded-2xl text-center"
+            data-product="2"
+          >
+            <img
+              src="./img/product3_compro_clean.jpg"
+              alt="Organic Milk"
+              class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+            />
+            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+              Skim Milk Powder
+            </h3>
+            <p class="text-sm mt-2" style="color: var(--text-medium)">
+              Pure & Natural
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Carousel JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // Initialize Product Showcase Slider
+      $(document).ready(function () {
+        $(".product-showcase").slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          autoplay: false,
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                dots: true,
+              },
+            },
+          ],
+        });
+
+        // Update active product card when slider changes
+        $(".product-showcase").on(
+          "beforeChange",
+          function (event, slick, currentSlide, nextSlide) {
+            updateActiveProduct(nextSlide);
+          }
+        );
+
+        // Set initial active product
+        updateActiveProduct(0);
+      });
+
+      // Product card click handlers
+      $(".product-card").on("click", function () {
+        const productIndex = $(this).data("product");
+        $(".product-showcase").slick("slickGoTo", productIndex);
+        updateActiveProduct(productIndex);
+      });
+
+      // Update active product card with neon glow effect
+      function updateActiveProduct(index) {
+        $(".product-card").removeClass("neon-glow");
+        $(`.product-card[data-product="${index}"]`).addClass("neon-glow");
+      }
+    </script>
+    <script>
+      // Function to initialize mobile menu (called after header is loaded)
+      function initializeMobileMenu() {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && mobileMenu) {
+          console.log("Mobile menu elements found and initializing...");
+
+          // Remove any existing event listeners first
+          const newBtn = mobileMenuBtn.cloneNode(true);
+          mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+
+          // Add event listener to the new button
+          newBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Mobile menu button clicked");
+
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!newBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+
+          // Close menu when clicking on nav links
+          const mobileNavLinks = mobileMenu.querySelectorAll(".nav-link");
+          mobileNavLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+
+          console.log("Mobile menu initialized successfully");
+        } else {
+          console.log("Mobile menu elements not found, retrying...");
+          // Retry after a short delay
+          setTimeout(initializeMobileMenu, 100);
+        }
+      }
+
+      // Load header and footer
+      $(document).ready(function () {
+        // Load header and initialize mobile menu after it's loaded
+        $("#header-container").load(
+          "./header/header.html",
+          function (response, status, xhr) {
+            if (status === "success") {
+              console.log("Header loaded successfully");
+              // Wait a bit for DOM to fully update, then initialize mobile menu
+              setTimeout(initializeMobileMenu, 50);
+            } else {
+              console.log("Error loading header:", status);
+            }
+          }
+        );
+
+        $("#footer-container").load("./footer/footer.html");
+
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>
