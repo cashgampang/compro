@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Pure Milk Co.</title>
+    <title>Hubungi Kami - Pure Milk Co.</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,12 +73,12 @@
         transform: rotate(180deg);
       }
     </style>
+    <script src="./lang/lang-contact.js"></script>
   </head>
   <body class="bg-white">
     <!-- Header -->
     <div id="header-container"></div>
 
-    <!-- Banner Section -->
     <section
       class="relative h-96 flex items-center justify-center"
       style="
@@ -93,11 +93,16 @@
         <h1
           class="text-5xl md:text-6xl font-bold mb-4"
           style="color: var(--text-dark)"
+          data-translate="contact.banner_title"
         >
           Contact Us
         </h1>
-        <p class="text-xl" style="color: var(--text-medium)">
-          Get in touch with our friendly team
+        <p
+          class="text-xl"
+          style="color: var(--text-medium)"
+          data-translate="contact.banner_text"
+        >
+          We're here to connect with you
         </p>
       </div>
     </section>
@@ -106,11 +111,19 @@
     <section class="py-20 px-4" style="background-color: var(--primary-white)">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+          <h2
+            class="text-4xl font-bold mb-6"
+            style="color: var(--text-dark)"
+            data-translate="contact.contact_info_title"
+          >
             Contact Information
           </h2>
-          <p class="text-xl" style="color: var(--text-medium)">
-            We're here to help you with any questions
+          <p
+            class="text-xl"
+            style="color: var(--text-medium)"
+            data-translate="contact.contact_info_text"
+          >
+            We're here to answer all your questions
           </p>
         </div>
 
@@ -127,17 +140,33 @@
             >
               <i class="fas fa-phone text-3xl text-white"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+            <h3
+              class="text-2xl font-bold mb-4"
+              style="color: var(--text-dark)"
+              data-translate="contact.phone_title"
+            >
               Phone
             </h3>
-            <p class="text-lg mb-2" style="color: var(--text-medium)">
-              Call us anytime
+            <p
+              class="text-lg mb-2"
+              style="color: var(--text-medium)"
+              data-translate="contact.phone_text"
+            >
+              Reach us anytime
             </p>
-            <p class="text-xl font-semibold" style="color: var(--accent-gold)">
-              +62 21 1234 5678
+            <p
+              class="text-xl font-semibold"
+              style="color: var(--accent-gold)"
+              data-translate="contact.phone_number1"
+            >
+              +62 895 2828 6844
             </p>
-            <p class="text-lg" style="color: var(--accent-gold)">
-              +62 812 3456 7890
+            <p
+              class="text-lg"
+              style="color: var(--accent-gold)"
+              data-translate="contact.phone_number2"
+            >
+              +62 895 2828 6844
             </p>
           </div>
 
@@ -153,16 +182,32 @@
             >
               <i class="fas fa-envelope text-3xl text-white"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+            <h3
+              class="text-2xl font-bold mb-4"
+              style="color: var(--text-dark)"
+              data-translate="contact.email_title"
+            >
               Email
             </h3>
-            <p class="text-lg mb-2" style="color: var(--text-medium)">
+            <p
+              class="text-lg mb-2"
+              style="color: var(--text-medium)"
+              data-translate="contact.email_text"
+            >
               Send us a message
             </p>
-            <p class="text-xl font-semibold" style="color: var(--accent-gold)">
+            <p
+              class="text-xl font-semibold"
+              style="color: var(--accent-gold)"
+              data-translate="contact.email_address1"
+            >
               info@puremilkco.com
             </p>
-            <p class="text-lg" style="color: var(--accent-gold)">
+            <p
+              class="text-lg"
+              style="color: var(--accent-gold)"
+              data-translate="contact.email_address2"
+            >
               support@puremilkco.com
             </p>
           </div>
@@ -179,16 +224,32 @@
             >
               <i class="fas fa-map-marker-alt text-3xl text-white"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+            <h3
+              class="text-2xl font-bold mb-4"
+              style="color: var(--text-dark)"
+              data-translate="contact.address_title"
+            >
               Address
             </h3>
-            <p class="text-lg mb-2" style="color: var(--text-medium)">
+            <p
+              class="text-lg mb-2"
+              style="color: var(--text-medium)"
+              data-translate="contact.address_text"
+            >
               Visit our office
             </p>
-            <p class="text-lg font-semibold" style="color: var(--accent-gold)">
+            <p
+              class="text-lg font-semibold"
+              style="color: var(--accent-gold)"
+              data-translate="contact.address_line1"
+            >
               Jl. Sudirman No. 123
             </p>
-            <p class="text-lg" style="color: var(--accent-gold)">
+            <p
+              class="text-lg"
+              style="color: var(--accent-gold)"
+              data-translate="contact.address_line2"
+            >
               Jakarta Pusat, 10220
             </p>
           </div>
@@ -203,10 +264,18 @@
     >
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+          <h2
+            class="text-4xl font-bold mb-6"
+            style="color: var(--text-dark)"
+            data-translate="contact.location_title"
+          >
             Our Location
           </h2>
-          <p class="text-xl" style="color: var(--text-medium)">
+          <p
+            class="text-xl"
+            style="color: var(--text-medium)"
+            data-translate="contact.location_text"
+          >
             Find us on the map
           </p>
         </div>
@@ -215,7 +284,7 @@
         <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
           <div class="w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJl.%20Jend.%20Sudirman%2C%20Jakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1635123456789!5m2!1sen!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJl.%20Jend.%20Sudirman%2C%20Jakarta%2C%20Indonesia!5e0!3m2!1sid!2sid!4v1635123456789!5m2!1sid!2sid"
               width="100%"
               height="100%"
               style="border: 0"
@@ -230,23 +299,40 @@
         <!-- Location Details -->
         <div class="text-center" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-effect p-8 rounded-2xl inline-block">
-            <h3 class="text-2xl font-bold mb-4" style="color: var(--text-dark)">
+            <h3
+              class="text-2xl font-bold mb-4"
+              style="color: var(--text-dark)"
+              data-translate="contact.location_details_title"
+            >
               Location Details
             </h3>
             <div class="space-y-2">
               <p
                 class="text-xl font-semibold"
                 style="color: var(--accent-gold)"
+                data-translate="contact.company_name"
               >
                 PT. Pure Milk Indonesia
               </p>
-              <p class="text-lg" style="color: var(--text-medium)">
+              <p
+                class="text-lg"
+                style="color: var(--text-medium)"
+                data-translate="contact.location_address1"
+              >
                 Jl. Jenderal Sudirman No. 123
               </p>
-              <p class="text-lg" style="color: var(--text-medium)">
+              <p
+                class="text-lg"
+                style="color: var(--text-medium)"
+                data-translate="contact.location_address2"
+              >
                 Karet Tengsin, Tanah Abang
               </p>
-              <p class="text-lg" style="color: var(--text-medium)">
+              <p
+                class="text-lg"
+                style="color: var(--text-medium)"
+                data-translate="contact.location_address3"
+              >
                 Jakarta Pusat 10220, Indonesia
               </p>
             </div>
@@ -259,10 +345,18 @@
     <section class="py-20 px-4" style="background-color: var(--primary-white)">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
+          <h2
+            class="text-4xl font-bold mb-6"
+            style="color: var(--text-dark)"
+            data-translate="contact.faq_title"
+          >
             Frequently Asked Questions
           </h2>
-          <p class="text-xl" style="color: var(--text-medium)">
+          <p
+            class="text-xl"
+            style="color: var(--text-medium)"
+            data-translate="contact.faq_text"
+          >
             Find answers to common questions
           </p>
         </div>
@@ -274,7 +368,11 @@
               class="faq-header p-6 cursor-pointer flex justify-between items-center"
               onclick="toggleFAQ(0)"
             >
-              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+              <h3
+                class="text-xl font-semibold"
+                style="color: var(--text-dark)"
+                data-translate="contact.faq_question1"
+              >
                 What makes your milk different from others?
               </h3>
               <i
@@ -282,12 +380,14 @@
                 style="color: var(--accent-gold)"
               ></i>
             </div>
-            <div class="faq-content px-6 pb-6">
+            <div
+              class="faq-content px-6 pb-6"
+              data-translate="contact.faq_answer1"
+            >
               <p style="color: var(--text-medium)">
-                Our milk comes from grass-fed cows on local farms, ensuring the
-                highest quality and freshness. We use no artificial additives
-                and maintain strict quality control throughout our production
-                process.
+                Our milk comes from grass-fed cows at local farms, ensuring top
+                quality and freshness. We use no artificial additives and
+                maintain strict quality control during production.
               </p>
             </div>
           </div>
@@ -298,7 +398,11 @@
               class="faq-header p-6 cursor-pointer flex justify-between items-center"
               onclick="toggleFAQ(1)"
             >
-              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+              <h3
+                class="text-xl font-semibold"
+                style="color: var(--text-dark)"
+                data-translate="contact.faq_question2"
+              >
                 Do you offer home delivery?
               </h3>
               <i
@@ -306,11 +410,14 @@
                 style="color: var(--accent-gold)"
               ></i>
             </div>
-            <div class="faq-content px-6 pb-6">
+            <div
+              class="faq-content px-6 pb-6"
+              data-translate="contact.faq_answer2"
+            >
               <p style="color: var(--text-medium)">
-                Yes! We offer daily home delivery service within Jakarta and
-                surrounding areas. Orders placed before 6 PM will be delivered
-                the next morning between 6-9 AM.
+                Yes! We offer daily home delivery in Jakarta and surrounding
+                areas. Orders placed before 6 PM are delivered the next morning
+                between 6 AM and 9 AM.
               </p>
             </div>
           </div>
@@ -321,19 +428,26 @@
               class="faq-header p-6 cursor-pointer flex justify-between items-center"
               onclick="toggleFAQ(2)"
             >
-              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
-                How long does the milk stay fresh?
+              <h3
+                class="text-xl font-semibold"
+                style="color: var(--text-dark)"
+                data-translate="contact.faq_question3"
+              >
+                How long does your milk stay fresh?
               </h3>
               <i
                 class="fas fa-chevron-down faq-toggle text-xl"
                 style="color: var(--accent-gold)"
               ></i>
             </div>
-            <div class="faq-content px-6 pb-6">
+            <div
+              class="faq-content px-6 pb-6"
+              data-translate="contact.faq_answer3"
+            >
               <p style="color: var(--text-medium)">
                 Our milk stays fresh for 5-7 days when properly refrigerated. We
-                recommend consuming within 3 days of opening for the best taste
-                and quality.
+                recommend consuming it within 3 days of opening for the best
+                taste and quality.
               </p>
             </div>
           </div>
@@ -344,7 +458,11 @@
               class="faq-header p-6 cursor-pointer flex justify-between items-center"
               onclick="toggleFAQ(3)"
             >
-              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+              <h3
+                class="text-xl font-semibold"
+                style="color: var(--text-dark)"
+                data-translate="contact.faq_question4"
+              >
                 Can I customize my order?
               </h3>
               <i
@@ -352,9 +470,12 @@
                 style="color: var(--accent-gold)"
               ></i>
             </div>
-            <div class="faq-content px-6 pb-6">
+            <div
+              class="faq-content px-6 pb-6"
+              data-translate="contact.faq_answer4"
+            >
               <p style="color: var(--text-medium)">
-                You can mix and match different types of milk, adjust delivery
+                You can mix and match different milk types, adjust delivery
                 frequency, and even pause deliveries when you're away. Contact
                 our customer service for personalized orders.
               </p>
@@ -367,7 +488,11 @@
               class="faq-header p-6 cursor-pointer flex justify-between items-center"
               onclick="toggleFAQ(4)"
             >
-              <h3 class="text-xl font-semibold" style="color: var(--text-dark)">
+              <h3
+                class="text-xl font-semibold"
+                style="color: var(--text-dark)"
+                data-translate="contact.faq_question5"
+              >
                 What payment methods do you accept?
               </h3>
               <i
@@ -375,7 +500,10 @@
                 style="color: var(--accent-gold)"
               ></i>
             </div>
-            <div class="faq-content px-6 pb-6">
+            <div
+              class="faq-content px-6 pb-6"
+              data-translate="contact.faq_answer5"
+            >
               <p style="color: var(--text-medium)">
                 We accept cash on delivery, bank transfers, credit/debit cards,
                 and popular e-wallet services like GoPay, OVO, and DANA for your

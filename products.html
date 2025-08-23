@@ -92,7 +92,65 @@
       .slick-next {
         right: -90px;
       }
+
+      /* Added modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
+
+      .modal.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: white;
+        margin: 15% auto;
+        padding: 0;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        animation: modalSlideIn 0.3s ease-out;
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: var(--accent-gold);
+      }
     </style>
+    <script src="./lang/lang-products.js" defer></script>
   </head>
   <body class="bg-white">
     <!-- Header -->
@@ -105,15 +163,23 @@
       <div class="absolute inset-0">
         <img
           src="./img/product1_compro_clean.jpg"
-          alt="About Us Banner"
+          alt="Products Banner"
           class="w-full h-full object-cover opacity-80"
         />
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       <div class="relative z-10 text-center text-white" data-aos="fade-up">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 mt-32">Products</h1>
-        <p class="text-xl md:text-2xl font-light">
-          Explore the wonders we have created
+        <h1
+          class="text-5xl md:text-6xl font-bold mb-4 mt-32"
+          data-translate="products.banner_title"
+        >
+          Produk
+        </h1>
+        <p
+          class="text-xl md:text-2xl font-light"
+          data-translate="products.banner_text"
+        >
+          Jelajahi keajaiban yang telah kami ciptakan
         </p>
       </div>
     </section>
@@ -133,6 +199,7 @@
                 <h2
                   class="text-4xl font-bold mb-6"
                   style="color: var(--text-dark)"
+                  data-translate="products.showcase_product1_title"
                 >
                   Fat Filled Whey Powder
                 </h2>
@@ -142,43 +209,61 @@
                       class="fas fa-check-circle text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Rich in natural vitamins and minerals</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product1_feature1"
                     >
+                      Kaya akan vitamin dan mineral alami
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-heart text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Perfect for growing children and adults</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product1_feature2"
                     >
+                      Cocok untuk anak-anak dan orang dewasa
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-leaf text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >100% natural with no artificial additives</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product1_feature3"
                     >
+                      100% alami tanpa bahan tambahan buatan
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-clock text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Fresh daily delivery guaranteed</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product1_feature4"
                     >
+                      Pengiriman segar setiap hari dijamin
+                    </span>
                   </div>
                 </div>
                 <button
-                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  class="detail-btn px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
                   style="background-color: var(--accent-gold)"
+                  data-product="0"
+                  data-translate="products.showcase_detail_button"
                 >
-                  Order Now
+                  Detail
                 </button>
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
@@ -198,8 +283,9 @@
                 <h2
                   class="text-4xl font-bold mb-6"
                   style="color: var(--text-dark)"
+                  data-translate="products.showcase_product2_title"
                 >
-                   Full Cream Milk Powder
+                  Full Cream Milk Powder
                 </h2>
                 <div class="space-y-4 mb-8">
                   <div class="flex items-center">
@@ -207,43 +293,62 @@
                       class="fas fa-weight text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Reduced fat content for health-conscious families</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product2_feature1"
                     >
+                      Kandungan lemak rendah untuk keluarga yang peduli
+                      kesehatan
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-dumbbell text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >High protein for active lifestyles</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product2_feature2"
                     >
+                      Kandungan protein tinggi untuk gaya hidup aktif
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-shield-alt text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Maintains all essential nutrients</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product2_feature3"
                     >
+                      Mempertahankan semua nutrisi penting
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-thumbs-up text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Great taste without compromise</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product2_feature4"
                     >
+                      Rasa yang enak tanpa kompromi
+                    </span>
                   </div>
                 </div>
                 <button
-                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  class="detail-btn px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
                   style="background-color: var(--accent-gold)"
+                  data-product="1"
+                  data-translate="products.showcase_detail_button"
                 >
-                  Order Now
+                  Detail
                 </button>
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
@@ -263,6 +368,7 @@
                 <h2
                   class="text-4xl font-bold mb-6"
                   style="color: var(--text-dark)"
+                  data-translate="products.showcase_product3_title"
                 >
                   Skim Milk Powder
                 </h2>
@@ -272,43 +378,61 @@
                       class="fas fa-seedling text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Certified organic from grass-fed cows</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product3_feature1"
                     >
+                      Penjualan terbaik bersertifikasi
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-ban text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >No hormones, antibiotics, or pesticides</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product3_feature2"
                     >
+                      Bebas hormon, antibiotik, atau pestisida
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-globe text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Environmentally sustainable farming</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product3_feature3"
                     >
+                      Peternakan ramah lingkungan
+                    </span>
                   </div>
                   <div class="flex items-center">
                     <i
                       class="fas fa-star text-2xl mr-4"
                       style="color: var(--accent-gold)"
                     ></i>
-                    <span class="text-lg" style="color: var(--text-medium)"
-                      >Premium quality for discerning taste</span
+                    <span
+                      class="text-lg"
+                      style="color: var(--text-medium)"
+                      data-translate="products.showcase_product3_feature4"
                     >
+                      Kualitas premium untuk selera yang istimewa
+                    </span>
                   </div>
                 </div>
                 <button
-                  class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                  class="detail-btn px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
                   style="background-color: var(--accent-gold)"
+                  data-product="2"
+                  data-translate="products.showcase_detail_button"
                 >
-                  Order Now
+                  Detail
                 </button>
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
@@ -331,11 +455,19 @@
     >
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-6" style="color: var(--text-dark)">
-            Choose Your Favorite
+          <h2
+            class="text-4xl font-bold mb-6"
+            style="color: var(--text-dark)"
+            data-translate="products.cards_title"
+          >
+            Pilih Produk Favorit Anda
           </h2>
-          <p class="text-xl" style="color: var(--text-medium)">
-            Click on any product to learn more about its benefits
+          <p
+            class="text-xl"
+            style="color: var(--text-medium)"
+            data-translate="products.cards_text"
+          >
+            Klik pada produk untuk mengetahui lebih lanjut tentang manfaatnya
           </p>
         </div>
 
@@ -349,11 +481,19 @@
               alt="Whole Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
-            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+            <h3
+              class="text-lg font-semibold"
+              style="color: var(--text-dark)"
+              data-translate="products.cards_product1_title"
+            >
               Fat Filled Whey Powder
             </h3>
-            <p class="text-sm mt-2" style="color: var(--text-medium)">
-              Rich & Creamy
+            <p
+              class="text-sm mt-2"
+              style="color: var(--text-medium)"
+              data-translate="products.cards_product1_text"
+            >
+              Kaya & Lembut
             </p>
           </div>
 
@@ -366,11 +506,19 @@
               alt="Low Fat Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
-            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+            <h3
+              class="text-lg font-semibold"
+              style="color: var(--text-dark)"
+              data-translate="products.cards_product2_title"
+            >
               Full Cream Milk Powder
             </h3>
-            <p class="text-sm mt-2" style="color: var(--text-medium)">
-              Healthy Choice
+            <p
+              class="text-sm mt-2"
+              style="color: var(--text-medium)"
+              data-translate="products.cards_product2_text"
+            >
+              Pilihan Sehat
             </p>
           </div>
 
@@ -383,11 +531,19 @@
               alt="Organic Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
-            <h3 class="text-lg font-semibold" style="color: var(--text-dark)">
+            <h3
+              class="text-lg font-semibold"
+              style="color: var(--text-dark)"
+              data-translate="products.cards_product3_title"
+            >
               Skim Milk Powder
             </h3>
-            <p class="text-sm mt-2" style="color: var(--text-medium)">
-              Pure & Natural
+            <p
+              class="text-sm mt-2"
+              style="color: var(--text-medium)"
+              data-translate="products.cards_product3_text"
+            >
+              Murni & Alami
             </p>
           </div>
         </div>
@@ -396,6 +552,18 @@
 
     <!-- Footer -->
     <div id="footer-container"></div>
+
+    <!-- Added Product Detail Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <div class="p-8">
+          <span class="close">&times;</span>
+          <div id="modalContent">
+            <!-- Content will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -415,6 +583,60 @@
         duration: 1000,
         once: true,
       });
+
+      const productDetails = {
+        0: {
+          title: "Fat Filled Whey Powder",
+          image: "./img/product1_compro_clean.jpg",
+          description:
+            "Rasa creamy, tekstur lembut, dan harga ekonomis untuk aplikasi makanan dan minuman Anda",
+          features: [
+            "Kaya akan vitamin dan mineral alami",
+            "Cocok untuk anak-anak dan orang dewasa",
+            "100% alami tanpa bahan tambahan buatan",
+            "Pengiriman segar setiap hari dijamin",
+          ],
+        },
+        1: {
+          title: "Full Cream Milk Powder",
+          image: "./img/product2_compro_clean.jpg",
+          description:
+            "100% susu sapi murni dengan cita rasa kaya dan kandungan gizi lengkap.",
+          features: [
+            "Kandungan lemak rendah untuk keluarga yang peduli kesehatan",
+            "Kandungan protein tinggi untuk gaya hidup aktif",
+            "Mempertahankan semua nutrisi penting",
+            "Rasa yang enak tanpa kompromi",
+          ],
+        },
+        2: {
+          title: "Skim Milk Powder",
+          image: "./img/product3_compro_clean.jpg",
+          description:
+            "Rendah lemak, tinggi protein, cocok untuk produk sehat dan rendah kalori",
+          features: [
+            "Penjualan terbaik bersertifikasi",
+            "Bebas hormon, antibiotik, atau pestisida",
+            "Peternakan ramah lingkungan",
+            "Kualitas premium untuk selera yang istimewa",
+          ],
+        },
+      };
+
+      const advantages = [
+        "Kualitas Premium – Diproses dari bahan baku terbaik.",
+        "Harga Kompetitif – Maksimalkan margin tanpa kompromi rasa.",
+        "Aman & Terjamin – Sesuai standar keamanan pangan internasional.",
+        "Pengiriman Cepat – Dukungan logistik untuk distribusi tepat waktu.",
+      ];
+
+      const applications = [
+        "Minuman bubuk instan",
+        "Es krim & dessert",
+        "Cokelat & permen",
+        "Roti, kue, & biskuit",
+        "Yogurt & keju rendah lemak",
+      ];
 
       // Initialize Product Showcase Slider
       $(document).ready(function () {
@@ -449,6 +671,21 @@
 
         // Set initial active product
         updateActiveProduct(0);
+
+        $(".detail-btn").on("click", function () {
+          const productIndex = $(this).data("product");
+          showProductModal(productIndex);
+        });
+
+        $(".close").on("click", function () {
+          $("#productModal").removeClass("show");
+        });
+
+        $(window).on("click", function (event) {
+          if (event.target.id === "productModal") {
+            $("#productModal").removeClass("show");
+          }
+        });
       });
 
       // Product card click handlers
@@ -462,6 +699,83 @@
       function updateActiveProduct(index) {
         $(".product-card").removeClass("neon-glow");
         $(`.product-card[data-product="${index}"]`).addClass("neon-glow");
+      }
+
+      function showProductModal(productIndex) {
+        const product = productDetails[productIndex];
+
+        const modalContent = `
+            <div class="text-center mb-6">
+              <img src="${product.image}" alt="${
+          product.title
+        }" class="w-48 h-48 mx-auto rounded-2xl object-cover mb-4 shadow-lg">
+              <h2 class="text-3xl font-bold mb-4" style="color: var(--text-dark)">${
+                product.title
+              }</h2>
+              <p class="text-lg" style="color: var(--text-medium)">${
+                product.description
+              }</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
+                  <i class="fas fa-box mr-2"></i>Produk
+                </h3>
+                <ul class="space-y-2">
+                  ${product.features
+                    .map(
+                      (feature) => `
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle mt-1 mr-3" style="color: var(--accent-gold)"></i>
+                      <span class="text-sm" style="color: var(--text-medium)">${feature}</span>
+                    </li>
+                  `
+                    )
+                    .join("")}
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
+                  <i class="fas fa-star mr-2"></i>Keunggulan
+                </h3>
+                <ul class="space-y-2">
+                  ${advantages
+                    .map(
+                      (advantage) => `
+                    <li class="flex items-start">
+                      <i class="fas fa-medal mt-1 mr-3" style="color: var(--accent-gold)"></i>
+                      <span class="text-sm" style="color: var(--text-medium)">${advantage}</span>
+                    </li>
+                  `
+                    )
+                    .join("")}
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
+                  <i class="fas fa-utensils mr-2"></i>Aplikasi Produk
+                </h3>
+                <ul class="space-y-2">
+                  ${applications
+                    .map(
+                      (app) => `
+                    <li class="flex items-start">
+                      <i class="fas fa-arrow-right mt-1 mr-3" style="color: var(--accent-gold)"></i>
+                      <span class="text-sm" style="color: var(--text-medium)">${app}</span>
+                    </li>
+                  `
+                    )
+                    .join("")}
+                </ul>
+              </div>
+            </div>
+          `;
+
+        $("#modalContent").html(modalContent);
+        $("#productModal").addClass("show");
       }
     </script>
     <script>

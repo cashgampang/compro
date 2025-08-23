@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pure Milk Co. - Fill Your Day with Freshness</title>
+    <script>
+      // cek localStorage
+      let lang = localStorage.getItem("language");
+
+      // kalau ga ada, set default "id"
+      if (!lang) {
+        lang = "id";
+        localStorage.setItem("language", lang);
+      }
+
+      // langsung load dengan key language
+      loadLanguage(lang);
+
+      // function buat load bahasa
+      function loadLanguage(key) {
+        console.log("Language loaded:", key);
+      }
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -108,13 +126,14 @@
         font-size: 24px;
       }
     </style>
+    <script src="./lang/lang-index.js" defer></script>
   </head>
   <body class="bg-white">
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Hero Slider Section -->
-    <section class="relative h-screen">
+    <section id="hero-section" class="relative h-screen">
       <div class="hero-slider h-full">
         <div class="relative h-full">
           <img
@@ -129,9 +148,9 @@
           >
             <div class="text-center text-white px-4">
               <h1 class="text-4xl md:text-7xl font-bold mb-4">
-                Pure Freshness
+                Kesegaran Murni
               </h1>
-              <p class="text-lg md:text-2xl">Experience the taste of nature</p>
+              <p class="text-lg md:text-2xl">Rasakan cita rasa alam</p>
             </div>
           </div>
         </div>
@@ -148,8 +167,12 @@
             class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
           >
             <div class="text-center text-white px-4">
-              <h1 class="text-4xl md:text-7xl font-bold mb-4">Farm to Table</h1>
-              <p class="text-lg md:text-2xl">Direct from our happy cows</p>
+              <h1 class="text-4xl md:text-7xl font-bold mb-4">
+                Dari Peternakan ke Meja
+              </h1>
+              <p class="text-lg md:text-2xl">
+                Langsung dari sapi kami yang bahagia
+              </p>
             </div>
           </div>
         </div>
@@ -167,9 +190,11 @@
           >
             <div class="text-center text-white px-4">
               <h1 class="text-4xl md:text-7xl font-bold mb-4">
-                Premium Quality
+                Kualitas Premium
               </h1>
-              <p class="text-lg md:text-2xl">Crafted with care and love</p>
+              <p class="text-lg md:text-2xl">
+                Dibuat dengan penuh kehati-hatian dan cinta
+              </p>
             </div>
           </div>
         </div>
@@ -188,11 +213,11 @@
             class="text-4xl md:text-6xl font-bold mb-6"
             style="color: var(--text-dark)"
           >
-            Fill your day with the freshness of pure milk
+            Isi hari Anda dengan kesegaran susu murni
           </h2>
           <p class="text-xl" style="color: var(--text-medium)">
-            Experience the difference that comes from caring about quality,
-            health, and your daily happiness
+            Rasakan perbedaan yang datang dari perhatian terhadap kualitas,
+            kesehatan, dan kebahagiaan harian Anda
           </p>
         </div>
 
@@ -202,25 +227,25 @@
               class="text-3xl font-semibold mb-6"
               style="color: var(--text-dark)"
             >
-              Our Promise to You
+              Janji Kami kepada Anda
             </h3>
             <p class="text-lg mb-6" style="color: var(--text-medium)">
-              Every glass of our milk carries the essence of pure countryside
-              freshness. We believe that quality nutrition should never be
-              compromised, which is why our cows graze on the finest pastures
-              and receive the utmost care.
+              Setiap paket produk kami membawa esensi kesegaran pedesaan yang
+              murni. Kami percaya bahwa nutrisi berkualitas tidak boleh
+              dikompromikan, itulah mengapa sapi kami merumput di padang rumput
+              terbaik dan menerima perawatan maksimal.
             </p>
             <p class="text-lg mb-6" style="color: var(--text-medium)">
-              When you choose our milk, you're not just nourishing your body –
-              you're elevating your mood, boosting your energy, and connecting
-              with the natural goodness that only comes from truly pure,
-              farm-fresh dairy.
+              Ketika Anda memilih susu kami, Anda tidak hanya menyehatkan tubuh
+              Anda – Anda juga meningkatkan suasana hati, meningkatkan energi,
+              dan terhubung dengan kebaikan alami yang hanya berasal dari susu
+              murni langsung dari peternakan.
             </p>
             <button
               class="px-8 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
               style="background-color: var(--accent-gold)"
             >
-              Learn More About Us
+              Pelajari Lebih Lanjut Tentang Kami
             </button>
           </div>
           <div data-aos="fade-left">
@@ -234,7 +259,7 @@
       </div>
     </section>
 
-    <!-- Section 2: Why Choose Us - Parallax Process Flow -->
+    <!-- Section 2: Why Choose Us - Pa  rallax Process Flow -->
     <section
       id="why_should_us"
       class="parallax-section py-20 px-4 relative"
@@ -252,11 +277,11 @@
             class="text-4xl md:text-5xl font-bold mb-6"
             style="color: var(--text-dark)"
           >
-            Our Quality Process
+            Proses Kualitas Kami
           </h2>
           <p class="text-xl" style="color: var(--text-medium)">
-            From farm to your table, every step is crafted with precision and
-            care
+            Dari peternakan ke meja Anda, setiap langkah dibuat dengan presisi
+            dan perhatian
           </p>
         </div>
 
@@ -279,13 +304,13 @@
                     class="text-2xl font-semibold ml-4"
                     style="color: var(--text-dark)"
                   >
-                    Happy Cows
+                    Sapi Bahagia
                   </h3>
                 </div>
                 <p style="color: var(--text-medium)">
-                  Our cows roam freely in lush green pastures, enjoying a
-                  natural diet and stress-free environment that directly impacts
-                  the quality and taste of their milk.
+                  Sapi kami berkeliaran bebas di padang rumput hijau yang subur,
+                  menikmati makanan alami dan lingkungan tanpa stres yang
+                  berdampak langsung pada kualitas dan rasa susu mereka.
                 </p>
               </div>
             </div>
@@ -316,13 +341,13 @@
                     class="text-2xl font-semibold ml-4"
                     style="color: var(--text-dark)"
                   >
-                    Fresh Milking
+                    Pemerahan Segar
                   </h3>
                 </div>
                 <p style="color: var(--text-medium)">
-                  Using state-of-the-art milking technology, we ensure the
-                  highest hygiene standards while maintaining the natural
-                  goodness and nutritional value of fresh milk.
+                  Menggunakan teknologi pemerahan canggih, kami memastikan
+                  standar kebersihan tertinggi sambil mempertahankan kebaikan
+                  alami dan nilai gizi susu segar.
                 </p>
               </div>
             </div>
@@ -353,13 +378,13 @@
                     class="text-2xl font-semibold ml-4"
                     style="color: var(--text-dark)"
                   >
-                    Quality Testing
+                    Pengujian Kualitas
                   </h3>
                 </div>
                 <p style="color: var(--text-medium)">
-                  Every batch undergoes rigorous quality testing to ensure
-                  purity, freshness, and nutritional excellence before it
-                  reaches your family.
+                  Setiap batch menjalani pengujian kualitas yang ketat untuk
+                  memastikan kemurnian, kesegaran, dan keunggulan nutrisi
+                  sebelum sampai ke keluarga Anda.
                 </p>
               </div>
             </div>
@@ -390,13 +415,13 @@
                     class="text-2xl font-semibold ml-4"
                     style="color: var(--text-dark)"
                   >
-                    Fresh Delivery
+                    Pengiriman Segar
                   </h3>
                 </div>
                 <p style="color: var(--text-medium)">
-                  Our efficient cold-chain delivery system ensures that the milk
-                  reaches you within hours of milking, preserving its natural
-                  freshness and taste.
+                  Sistem pengiriman rantai dingin kami yang efisien memastikan
+                  susu sampai kepada Anda dalam hitungan jam setelah pemerahan,
+                  menjaga kesegaran dan rasanya yang alami.
                 </p>
               </div>
             </div>
@@ -424,10 +449,11 @@
             class="text-4xl md:text-5xl font-bold mb-6"
             style="color: var(--text-dark)"
           >
-            Trusted by Thousands
+            Dipercaya oleh Ribuan Orang
           </h2>
           <p class="text-xl" style="color: var(--text-medium)">
-            Join our growing family of satisfied customers
+            Bergabunglah dengan keluarga kami yang terus bertumbuh dari
+            pelanggan yang puas
           </p>
         </div>
 
@@ -444,7 +470,7 @@
               50,000+
             </div>
             <div class="text-lg" style="color: var(--text-dark)">
-              Happy Customers
+              Pelanggan Bahagia
             </div>
           </div>
           <div
@@ -455,10 +481,10 @@
               class="text-4xl font-bold mb-2"
               style="color: var(--accent-gold)"
             >
-              1M+
+              1,000,000+
             </div>
             <div class="text-lg" style="color: var(--text-dark)">
-              Liters Sold
+              Liter Terjual
             </div>
           </div>
           <div
@@ -472,7 +498,7 @@
               4.9★
             </div>
             <div class="text-lg" style="color: var(--text-dark)">
-              Average Rating
+              Nilai Rata-Rata Kami
             </div>
           </div>
         </div>
@@ -631,35 +657,35 @@
           image:
             "https://images.unsplash.com/photo-1530254541043-129f4c372200?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           rating: 4,
-          text: "The freshest milk I've ever tasted! My kids love it and I feel good knowing it's pure and natural.",
+          text: "Favorit banget, apalagi dicampur diseduh panas-panas dicampur kopi, really love it!",
         },
         {
           name: "Chintya Anggita",
           image:
             "https://plus.unsplash.com/premium_photo-1661508196384-333e4ebd90db?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           rating: 5,
-          text: "Amazing quality and taste. The delivery is always on time and the milk stays fresh for days.",
+          text: "Buat kalian yang tinggal di bogor, wajib banget siee buat stock minum kalian. Ujan ujan minum susu anget enakeun euyy",
         },
         {
           name: "Angga Aditya",
           image:
             "https://images.unsplash.com/photo-1635789531654-8d0404549bfe?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           rating: 5,
-          text: "I switched to Pure Milk Co. and never looked back. The difference in quality is remarkable!",
+          text: "Gw beliin ini buat cwek gw, dan dia suka banget. Biasanya dia campur sama eskrim wkwkwk. Mantap lah produknya nih, rekom parahh",
         },
         {
           name: "Andi Purnama",
           image:
             "https://images.unsplash.com/photo-1614772903208-613ed4282ded?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           rating: 5,
-          text: "Perfect for my morning coffee and cereal. You can really taste the difference of farm-fresh milk.",
+          text: "Temen sejati espresso gue tiap pagi 🤣",
         },
         {
-          name: "Kirana Dewi",
+          name: "Abdul Fattah",
           image:
-            "https://images.unsplash.com/photo-1593143061849-5b6ab3a4f1d4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          rating: 4,
-          text: "My family has been drinking this milk for years. Consistently fresh and delicious every time.",
+            "https://images.unsplash.com/photo-1723256048093-89c49bf87ccf?q=80&w=826&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          rating: 5,
+          text: "Harganya terjangkau buat usaha pastry & bread saya. Bahan premium, kualitas jos!",
         },
         {
           name: "Abdul Fattah",
