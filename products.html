@@ -35,6 +35,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
+    <script src="./lang/lang-products.js" defer></script>
+
     <style>
       * {
         font-family: "Poppins", sans-serif;
@@ -150,7 +152,6 @@
         color: var(--accent-gold);
       }
     </style>
-    <script src="./lang/lang-products.js" defer></script>
   </head>
   <body class="bg-white">
     <!-- Header -->
@@ -162,7 +163,7 @@
     >
       <div class="absolute inset-0">
         <img
-          src="./img/product1_compro_clean.jpg"
+          src="./img/product1_compro_clean.png"
           alt="Products Banner"
           class="w-full h-full object-cover opacity-80"
         />
@@ -268,7 +269,7 @@
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
                 <img
-                  src="./img/product1_compro_clean.jpg"
+                  src="./img/product1_compro_clean.png"
                   alt="Premium Whole Milk"
                   class="rounded-2xl shadow-2xl w-full"
                 />
@@ -353,7 +354,7 @@
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
                 <img
-                  src="./img/product2_compro_clean.jpg"
+                  src="./img/product2_compro_clean.png"
                   alt="Low Fat Milk"
                   class="rounded-2xl shadow-2xl w-full"
                 />
@@ -437,7 +438,7 @@
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
                 <img
-                  src="./img/product3_compro_clean.jpg"
+                  src="./img/product3_compro_clean.png"
                   alt="Organic Milk"
                   class="rounded-2xl shadow-2xl w-full"
                 />
@@ -477,7 +478,7 @@
             data-product="0"
           >
             <img
-              src="./img/product1_compro_clean.jpg"
+              src="./img/product1_compro_clean.png"
               alt="Whole Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
@@ -502,7 +503,7 @@
             data-product="1"
           >
             <img
-              src="./img/product2_compro_clean.jpg"
+              src="./img/product2_compro_clean.png"
               alt="Low Fat Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
@@ -527,7 +528,7 @@
             data-product="2"
           >
             <img
-              src="./img/product3_compro_clean.jpg"
+              src="./img/product3_compro_clean.png"
               alt="Organic Milk"
               class="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
             />
@@ -567,217 +568,13 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- Slick Carousel JS -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-
-      const productDetails = {
-        0: {
-          title: "Fat Filled Whey Powder",
-          image: "./img/product1_compro_clean.jpg",
-          description:
-            "Rasa creamy, tekstur lembut, dan harga ekonomis untuk aplikasi makanan dan minuman Anda",
-          features: [
-            "Kaya akan vitamin dan mineral alami",
-            "Cocok untuk anak-anak dan orang dewasa",
-            "100% alami tanpa bahan tambahan buatan",
-            "Pengiriman segar setiap hari dijamin",
-          ],
-        },
-        1: {
-          title: "Full Cream Milk Powder",
-          image: "./img/product2_compro_clean.jpg",
-          description:
-            "100% susu sapi murni dengan cita rasa kaya dan kandungan gizi lengkap.",
-          features: [
-            "Kandungan lemak rendah untuk keluarga yang peduli kesehatan",
-            "Kandungan protein tinggi untuk gaya hidup aktif",
-            "Mempertahankan semua nutrisi penting",
-            "Rasa yang enak tanpa kompromi",
-          ],
-        },
-        2: {
-          title: "Skim Milk Powder",
-          image: "./img/product3_compro_clean.jpg",
-          description:
-            "Rendah lemak, tinggi protein, cocok untuk produk sehat dan rendah kalori",
-          features: [
-            "Penjualan terbaik bersertifikasi",
-            "Bebas hormon, antibiotik, atau pestisida",
-            "Peternakan ramah lingkungan",
-            "Kualitas premium untuk selera yang istimewa",
-          ],
-        },
-      };
-
-      const advantages = [
-        "Kualitas Premium – Diproses dari bahan baku terbaik.",
-        "Harga Kompetitif – Maksimalkan margin tanpa kompromi rasa.",
-        "Aman & Terjamin – Sesuai standar keamanan pangan internasional.",
-        "Pengiriman Cepat – Dukungan logistik untuk distribusi tepat waktu.",
-      ];
-
-      const applications = [
-        "Minuman bubuk instan",
-        "Es krim & dessert",
-        "Cokelat & permen",
-        "Roti, kue, & biskuit",
-        "Yogurt & keju rendah lemak",
-      ];
-
-      // Initialize Product Showcase Slider
-      $(document).ready(function () {
-        $(".product-showcase").slick({
-          dots: false,
-          infinite: true,
-          speed: 500,
-          fade: true,
-          cssEase: "linear",
-          autoplay: false,
-          arrows: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                arrows: false,
-                dots: true,
-              },
-            },
-          ],
-        });
-
-        // Update active product card when slider changes
-        $(".product-showcase").on(
-          "beforeChange",
-          function (event, slick, currentSlide, nextSlide) {
-            updateActiveProduct(nextSlide);
-          }
-        );
-
-        // Set initial active product
-        updateActiveProduct(0);
-
-        $(".detail-btn").on("click", function () {
-          const productIndex = $(this).data("product");
-          showProductModal(productIndex);
-        });
-
-        $(".close").on("click", function () {
-          $("#productModal").removeClass("show");
-        });
-
-        $(window).on("click", function (event) {
-          if (event.target.id === "productModal") {
-            $("#productModal").removeClass("show");
-          }
-        });
-      });
-
-      // Product card click handlers
-      $(".product-card").on("click", function () {
-        const productIndex = $(this).data("product");
-        $(".product-showcase").slick("slickGoTo", productIndex);
-        updateActiveProduct(productIndex);
-      });
-
-      // Update active product card with neon glow effect
-      function updateActiveProduct(index) {
-        $(".product-card").removeClass("neon-glow");
-        $(`.product-card[data-product="${index}"]`).addClass("neon-glow");
-      }
-
-      function showProductModal(productIndex) {
-        const product = productDetails[productIndex];
-
-        const modalContent = `
-            <div class="text-center mb-6">
-              <img src="${product.image}" alt="${
-          product.title
-        }" class="w-48 h-48 mx-auto rounded-2xl object-cover mb-4 shadow-lg">
-              <h2 class="text-3xl font-bold mb-4" style="color: var(--text-dark)">${
-                product.title
-              }</h2>
-              <p class="text-lg" style="color: var(--text-medium)">${
-                product.description
-              }</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
-                  <i class="fas fa-box mr-2"></i>Produk
-                </h3>
-                <ul class="space-y-2">
-                  ${product.features
-                    .map(
-                      (feature) => `
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle mt-1 mr-3" style="color: var(--accent-gold)"></i>
-                      <span class="text-sm" style="color: var(--text-medium)">${feature}</span>
-                    </li>
-                  `
-                    )
-                    .join("")}
-                </ul>
-              </div>
-              
-              <div>
-                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
-                  <i class="fas fa-star mr-2"></i>Keunggulan
-                </h3>
-                <ul class="space-y-2">
-                  ${advantages
-                    .map(
-                      (advantage) => `
-                    <li class="flex items-start">
-                      <i class="fas fa-medal mt-1 mr-3" style="color: var(--accent-gold)"></i>
-                      <span class="text-sm" style="color: var(--text-medium)">${advantage}</span>
-                    </li>
-                  `
-                    )
-                    .join("")}
-                </ul>
-              </div>
-              
-              <div>
-                <h3 class="text-xl font-semibold mb-4 text-center" style="color: var(--accent-gold)">
-                  <i class="fas fa-utensils mr-2"></i>Aplikasi Produk
-                </h3>
-                <ul class="space-y-2">
-                  ${applications
-                    .map(
-                      (app) => `
-                    <li class="flex items-start">
-                      <i class="fas fa-arrow-right mt-1 mr-3" style="color: var(--accent-gold)"></i>
-                      <span class="text-sm" style="color: var(--text-medium)">${app}</span>
-                    </li>
-                  `
-                    )
-                    .join("")}
-                </ul>
-              </div>
-            </div>
-          `;
-
-        $("#modalContent").html(modalContent);
-        $("#productModal").addClass("show");
-      }
-    </script>
     <script>
       // Function to initialize mobile menu (called after header is loaded)
       function initializeMobileMenu() {
@@ -823,6 +620,153 @@
         }
       }
 
+      function toggleDropdown(dropdownId) {
+        console.log("🔄 Toggle dropdown:", dropdownId);
+
+        const dropdown = document.getElementById(dropdownId);
+        if (!dropdown) {
+          console.error("❌ Dropdown not found:", dropdownId);
+          return;
+        }
+
+        // Close other dropdowns first
+        document.querySelectorAll(".language-dropdown").forEach((d) => {
+          if (d !== dropdown && d.classList.contains("active")) {
+            d.classList.remove("active");
+          }
+        });
+
+        // Toggle current dropdown
+        dropdown.classList.toggle("active");
+        console.log(
+          "🎯 Dropdown is now:",
+          dropdown.classList.contains("active") ? "OPEN" : "CLOSED"
+        );
+      }
+
+      function selectLanguage(lang) {
+        console.log("🌐 Language selected:", lang);
+
+        // Close all dropdowns
+        document.querySelectorAll(".language-dropdown").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+        });
+
+        // Save to localStorage
+        try {
+          localStorage.setItem("language", lang);
+          console.log("✅ Language saved:", lang);
+        } catch (error) {
+          console.warn("⚠️ Could not save to localStorage:", error);
+        }
+
+        // Reload page
+        setTimeout(() => {
+          window.location.reload();
+        }, 300);
+      }
+
+      function updateLanguageDisplay(lang) {
+        // Default to 'id' if lang is undefined
+        lang = lang || "id";
+        const isIndonesian = lang === "id";
+        const isEnglish = lang === "en";
+        console.log(
+          "🔄 Updating display for:",
+          lang,
+          "- Indonesian:",
+          isIndonesian,
+          "- English:",
+          isEnglish
+        );
+
+        // Update desktop flag and text
+        const desktopText = document.getElementById("current-text-desktop");
+        const desktopFlag = document.getElementById("current-flag-desktop");
+        if (desktopText) {
+          desktopText.textContent = isIndonesian ? "ID" : "EN";
+        }
+        if (desktopFlag) {
+          desktopFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+          console.log("🚩 Desktop flag updated to:", desktopFlag.className);
+        }
+
+        // Update mobile flag and text
+        const mobileText = document.getElementById("current-text-mobile");
+        const mobileFlag = document.getElementById("current-flag-mobile");
+        if (mobileText) {
+          mobileText.textContent = isIndonesian ? "ID" : "EN";
+        }
+        if (mobileFlag) {
+          mobileFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+          console.log("📱 Mobile flag updated to:", mobileFlag.className);
+        }
+      }
+
+      function initializeLanguageDropdown() {
+        console.log("🚀 Initializing language dropdown after AJAX load");
+
+        // Initialize savedLang with default value
+        let savedLang = "id"; // Default to Indonesian
+        try {
+          const storedLang = localStorage.getItem("language");
+          if (storedLang) {
+            savedLang = storedLang; // Use stored value if available
+            console.log("📖 Found saved language:", savedLang);
+          } else {
+            console.log("📖 No saved language, using default: id");
+          }
+        } catch (error) {
+          console.warn("⚠️ Could not read localStorage:", error);
+        }
+
+        // Update flag and text based on savedLang
+        updateLanguageDisplay(savedLang);
+
+        // Attach click events for dropdown buttons
+        const desktopBtn = document.getElementById("desktop-lang-btn");
+        const mobileBtn = document.getElementById("mobile-lang-btn");
+
+        if (desktopBtn) {
+          desktopBtn.addEventListener("click", () =>
+            toggleDropdown("language-dropdown-desktop")
+          );
+          console.log("✅ Desktop dropdown event attached");
+        }
+
+        if (mobileBtn) {
+          mobileBtn.addEventListener("click", () =>
+            toggleDropdown("language-dropdown-mobile")
+          );
+          console.log("✅ Mobile dropdown event attached");
+        }
+
+        // Attach language option clicks
+        document.querySelectorAll(".language-option").forEach((option) => {
+          option.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            selectLanguage(lang);
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest(".language-dropdown")) {
+            document
+              .querySelectorAll(".language-dropdown")
+              .forEach((dropdown) => {
+                dropdown.classList.remove("active");
+              });
+          }
+        });
+
+        console.log(
+          "✅ Language dropdown fully initialized with saved language:",
+          savedLang
+        );
+      }
+    </script>
+    <script>
       // Load header and footer
       $(document).ready(function () {
         // Load header and initialize mobile menu after it's loaded

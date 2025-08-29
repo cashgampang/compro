@@ -527,10 +527,16 @@
             >
               <i class="fas fa-certificate text-2xl text-white"></i>
             </div>
-            <h3 class="text-lg font-bold custom-text-primary mb-2" data-translate="about.cert_iso_title">
+            <h3
+              class="text-lg font-bold custom-text-primary mb-2"
+              data-translate="about.cert_iso_title"
+            >
               ISO 22000
             </h3>
-            <p class="custom-text-secondary text-sm" data-translate="about.cert_iso_text">
+            <p
+              class="custom-text-secondary text-sm"
+              data-translate="about.cert_iso_text"
+            >
               Food Safety Management System Certification
             </p>
           </div>
@@ -543,10 +549,16 @@
             >
               <i class="fas fa-leaf text-2xl text-white"></i>
             </div>
-            <h3 class="text-lg font-bold custom-text-primary mb-2" data-translate="about.cert_organic_title">
+            <h3
+              class="text-lg font-bold custom-text-primary mb-2"
+              data-translate="about.cert_organic_title"
+            >
               Organic Certified
             </h3>
-            <p class="custom-text-secondary text-sm" data-translate="about.cert_organic_text">
+            <p
+              class="custom-text-secondary text-sm"
+              data-translate="about.cert_organic_text"
+            >
               USDA Organic Certification for Premium Products
             </p>
           </div>
@@ -559,10 +571,16 @@
             >
               <i class="fas fa-trophy text-2xl text-white"></i>
             </div>
-            <h3 class="text-lg font-bold custom-text-primary mb-2" data-translate="about.cert_bestdairy_title">
+            <h3
+              class="text-lg font-bold custom-text-primary mb-2"
+              data-translate="about.cert_bestdairy_title"
+            >
               Best Dairy 2023
             </h3>
-            <p class="custom-text-secondary text-sm" data-translate="about.cert_bestdairy_text">
+            <p
+              class="custom-text-secondary text-sm"
+              data-translate="about.cert_bestdairy_text"
+            >
               National Dairy Excellence Award Winner
             </p>
           </div>
@@ -575,10 +593,16 @@
             >
               <i class="fas fa-globe-americas text-2xl text-white"></i>
             </div>
-            <h3 class="text-lg font-bold custom-text-primary mb-2" data-translate="about.cert_carbon_title">
+            <h3
+              class="text-lg font-bold custom-text-primary mb-2"
+              data-translate="about.cert_carbon_title"
+            >
               Carbon Neutral
             </h3>
-            <p class="custom-text-secondary text-sm" data-translate="about.cert_carbon_text">
+            <p
+              class="custom-text-secondary text-sm"
+              data-translate="about.cert_carbon_text"
+            >
               Certified Carbon Neutral Operations
             </p>
           </div>
@@ -587,18 +611,41 @@
         <div class="mt-16 text-center">
           <div class="grid md:grid-cols-3 gap-8">
             <div class="glass-effect rounded-2xl p-8 bg-white shadow-lg">
-              <div class="text-4xl font-bold custom-text-primary mb-2" data-translate="about.cert_partners_number">
+              <div
+                class="text-4xl font-bold custom-text-primary mb-2"
+                data-translate="about.cert_partners_number"
+              >
                 1000+
               </div>
-              <p class="custom-text-secondary" data-translate="about.cert_partners_text">Mitra Peternak</p>
+              <p
+                class="custom-text-secondary"
+                data-translate="about.cert_partners_text"
+              >
+                Mitra Peternak
+              </p>
             </div>
             <div class="glass-effect rounded-2xl p-8 bg-white shadow-lg">
-              <div class="text-4xl font-bold custom-text-primary mb-2" data-translate="about.cert_experience_number">30+</div>
-              <p class="custom-text-secondary" data-translate="about.cert_experience_text">Tahun Pengalaman</p>
+              <div
+                class="text-4xl font-bold custom-text-primary mb-2"
+                data-translate="about.cert_experience_number"
+              >
+                30+
+              </div>
+              <p
+                class="custom-text-secondary"
+                data-translate="about.cert_experience_text"
+              >
+                Tahun Pengalaman
+              </p>
             </div>
             <div class="glass-effect rounded-2xl p-8 bg-white shadow-lg">
               <div class="text-4xl font-bold custom-text-primary mb-2">50+</div>
-              <p class="custom-text-secondary" data-translate="about.cert_awards_text">Penghargaan Dimenangkan</p>
+              <p
+                class="custom-text-secondary"
+                data-translate="about.cert_awards_text"
+              >
+                Penghargaan Dimenangkan
+              </p>
             </div>
           </div>
         </div>
@@ -657,6 +704,152 @@
           // Retry after a short delay
           setTimeout(initializeMobileMenu, 100);
         }
+      }
+
+      function toggleDropdown(dropdownId) {
+        console.log("🔄 Toggle dropdown:", dropdownId);
+
+        const dropdown = document.getElementById(dropdownId);
+        if (!dropdown) {
+          console.error("❌ Dropdown not found:", dropdownId);
+          return;
+        }
+
+        // Close other dropdowns first
+        document.querySelectorAll(".language-dropdown").forEach((d) => {
+          if (d !== dropdown && d.classList.contains("active")) {
+            d.classList.remove("active");
+          }
+        });
+
+        // Toggle current dropdown
+        dropdown.classList.toggle("active");
+        console.log(
+          "🎯 Dropdown is now:",
+          dropdown.classList.contains("active") ? "OPEN" : "CLOSED"
+        );
+      }
+
+      function selectLanguage(lang) {
+        console.log("🌐 Language selected:", lang);
+
+        // Close all dropdowns
+        document.querySelectorAll(".language-dropdown").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+        });
+
+        // Save to localStorage
+        try {
+          localStorage.setItem("language", lang);
+          console.log("✅ Language saved:", lang);
+        } catch (error) {
+          console.warn("⚠️ Could not save to localStorage:", error);
+        }
+
+        // Reload page
+        setTimeout(() => {
+          window.location.reload();
+        }, 300);
+      }
+
+      function updateLanguageDisplay(lang) {
+        // Default to 'id' if lang is undefined
+        lang = lang || "id";
+        const isIndonesian = lang === "id";
+        const isEnglish = lang === "en";
+        console.log(
+          "🔄 Updating display for:",
+          lang,
+          "- Indonesian:",
+          isIndonesian,
+          "- English:",
+          isEnglish
+        );
+
+        // Update desktop flag and text
+        const desktopText = document.getElementById("current-text-desktop");
+        const desktopFlag = document.getElementById("current-flag-desktop");
+        if (desktopText) {
+          desktopText.textContent = isIndonesian ? "ID" : "EN";
+        }
+        if (desktopFlag) {
+          desktopFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+          console.log("🚩 Desktop flag updated to:", desktopFlag.className);
+        }
+
+        // Update mobile flag and text
+        const mobileText = document.getElementById("current-text-mobile");
+        const mobileFlag = document.getElementById("current-flag-mobile");
+        if (mobileText) {
+          mobileText.textContent = isIndonesian ? "ID" : "EN";
+        }
+        if (mobileFlag) {
+          mobileFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+          console.log("📱 Mobile flag updated to:", mobileFlag.className);
+        }
+      }
+
+      function initializeLanguageDropdown() {
+        console.log("🚀 Initializing language dropdown after AJAX load");
+
+        // Initialize savedLang with default value
+        let savedLang = "id"; // Default to Indonesian
+        try {
+          const storedLang = localStorage.getItem("language");
+          if (storedLang) {
+            savedLang = storedLang; // Use stored value if available
+            console.log("📖 Found saved language:", savedLang);
+          } else {
+            console.log("📖 No saved language, using default: id");
+          }
+        } catch (error) {
+          console.warn("⚠️ Could not read localStorage:", error);
+        }
+
+        // Update flag and text based on savedLang
+        updateLanguageDisplay(savedLang);
+
+        // Attach click events for dropdown buttons
+        const desktopBtn = document.getElementById("desktop-lang-btn");
+        const mobileBtn = document.getElementById("mobile-lang-btn");
+
+        if (desktopBtn) {
+          desktopBtn.addEventListener("click", () =>
+            toggleDropdown("language-dropdown-desktop")
+          );
+          console.log("✅ Desktop dropdown event attached");
+        }
+
+        if (mobileBtn) {
+          mobileBtn.addEventListener("click", () =>
+            toggleDropdown("language-dropdown-mobile")
+          );
+          console.log("✅ Mobile dropdown event attached");
+        }
+
+        // Attach language option clicks
+        document.querySelectorAll(".language-option").forEach((option) => {
+          option.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            selectLanguage(lang);
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest(".language-dropdown")) {
+            document
+              .querySelectorAll(".language-dropdown")
+              .forEach((dropdown) => {
+                dropdown.classList.remove("active");
+              });
+          }
+        });
+
+        console.log(
+          "✅ Language dropdown fully initialized with saved language:",
+          savedLang
+        );
       }
 
       // Load header and footer

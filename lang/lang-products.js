@@ -139,7 +139,7 @@ const translations = {
 
 const productDetails = {
   0: {
-    image: "./img/product1_compro_clean.jpg",
+    image: "/img/product1_compro_clean.png",
     title: "products.modal_product1_title",
     description: "products.modal_product1_description",
     features: [
@@ -150,7 +150,7 @@ const productDetails = {
     ],
   },
   1: {
-    image: "./img/product2_compro_clean.jpg",
+    image: "./img/product2_compro_clean.png",
     title: "products.modal_product2_title",
     description: "products.modal_product2_description",
     features: [
@@ -161,7 +161,7 @@ const productDetails = {
     ],
   },
   2: {
-    image: "./img/product3_compro_clean.jpg",
+    image: "./img/product3_compro_clean.png",
     title: "products.modal_product3_title",
     description: "products.modal_product3_description",
     features: [

@@ -1,93 +1,403 @@
-<!-- Clean header.html file without JavaScript -->
+<!-- Working header.html file with clickable dropdown -->
 <style>
-    .header-oval {
-        background: rgba(245, 230, 204, 0.95);
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(212, 180, 131, 0.3);
-    }
-    
-    .nav-link {
-        transition: all 0.3s ease;
-    }
-    
-    .nav-link:hover {
-        color: #D4B483;
-        transform: translateY(-2px);
+  .header-oval {
+    background: rgba(245, 230, 204, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(212, 180, 131, 0.3);
+  }
+
+  .nav-link {
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #d4b483;
+    transform: translateY(-2px);
+  }
+
+  .language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 180, 131, 0.4);
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .language-selector:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to bottom,
+      #012169 33%,
+      #fff 33%,
+      #fff 66%,
+      #c8102e 66%
+    );
+    position: relative;
+  }
+
+  .flag-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        #c8102e 40%,
+        #c8102e 45%,
+        transparent 45%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 40%,
+        #c8102e 40%,
+        #c8102e 45%,
+        transparent 45%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 55%,
+        #c8102e 55%,
+        #c8102e 60%,
+        transparent 60%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 55%,
+        #c8102e 55%,
+        #c8102e 60%,
+        transparent 60%
+      );
+  }
+
+  @media (max-width: 768px) {
+    .mobile-header {
+      background: rgba(245, 230, 204, 0.95);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-bottom: 2px solid rgba(212, 180, 131, 0.3);
+      border-radius: 0;
+      padding: 1rem;
     }
 
-    /* Mobile-specific header styling for standard navbar layout */
-    @media (max-width: 768px) {
-        .mobile-header {
-            background: rgba(245, 230, 204, 0.95);
-            backdrop-filter: blur(10px);
-            border: none;
-            border-bottom: 2px solid rgba(212, 180, 131, 0.3);
-            border-radius: 0;
-            padding: 1rem;
-        }
+    .language-selector {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
     }
+  }
 
-    /* Ensure mobile menu is clickable */
-    .mobile-menu-btn {
-        z-index: 60;
-        position: relative;
-        cursor: pointer;
-    }
+  .mobile-menu-btn {
+    z-index: 60;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .language-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .language-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(212, 180, 131, 0.4);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1002;
+    min-width: 120px;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .language-dropdown.active .language-dropdown-content {
+    display: block;
+  }
+
+  .language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .language-option:hover {
+    background: rgba(245, 230, 204, 0.5);
+  }
+
+  .language-option:first-child {
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .language-option:last-child {
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  .flag-id {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+    position: relative;
+  }
 </style>
 
 <!-- Desktop header with oval design -->
-<header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-xl px-4 md:block hidden">
-    <nav class="header-oval rounded-full px-8 py-4 shadow-lg">
-        <div class="flex items-center justify-between">
-            <!-- Left Navigation Links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link font-medium text-gray-700">Home</a>
-                <a href="about.html" class="nav-link font-medium text-gray-700">About</a>
-            </div>
-            
-            <!-- Center Logo -->
-            <div class="flex-shrink-0">
-                <img src="../img/logo-compro.png" 
-                     alt="Pure Milk Co." class="h-12 w-auto">
-            </div>
-            
-            <!-- Right Navigation Links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="products.html" class="nav-link font-medium text-gray-700">Products</a>
-                <a href="contact.html" class="nav-link font-medium text-gray-700">Contact</a>
-            </div>
-        </div>
-    </nav>
+<header
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-xl px-4 md:block hidden"
+>
+  <nav class="header-oval rounded-full px-8 py-4 shadow-lg">
+    <div class="flex items-center justify-between">
+      <!-- Left Navigation Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link font-medium text-gray-700">Home</a>
+        <a href="about.html" class="nav-link font-medium text-gray-700">About</a>
+      </div>
+
+      <!-- Center Logo -->
+      <div class="flex-shrink-0">
+        <img
+          src="./img/logo-compro.png"
+          alt="Pure Milk Co."
+          class="h-12 w-auto"
+          onerror="this.src='../img/logo-compro.png'"
+        />
+      </div>
+
+      <!-- Right Navigation Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="products.html" class="nav-link font-medium text-gray-700">Products</a>
+        <a href="contact.html" class="nav-link font-medium text-gray-700">Contact</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<!-- Mobile header with standard navbar layout -->
+<!-- Language selector for desktop -->
+<div class="fixed top-4 right-4 z-50 hidden md:block">
+  <div class="language-dropdown" id="language-dropdown-desktop">
+    <div class="language-selector" onclick="toggleDropdown('language-dropdown-desktop')">
+      <span id="current-text-desktop">Language</span>
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <div class="language-dropdown-content">
+      <div class="language-option" onclick="selectLanguage('id')">
+        <div class="flag-id"></div>
+        <span>ID</span>
+      </div>
+      <div class="language-option" onclick="selectLanguage('en')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/330px-Flag_of_the_United_Kingdom.svg.png" width="20">
+        <span>EN</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile header -->
 <header class="fixed top-0 left-0 right-0 z-50 md:hidden">
-    <nav class="mobile-header">
-        <div class="flex items-center justify-between">
-            <!-- Logo on the left -->
-            <div class="flex-shrink-0">
-                <img src="../img/logo-compro.png" 
-                     alt="Pure Milk Co." class="h-10 w-auto">
+  <nav class="mobile-header">
+    <div class="flex items-center justify-between">
+      <!-- Logo on the left -->
+      <div class="flex-shrink-0">
+        <img
+          src="./img/logo-compro.png"
+          alt="Pure Milk Co."
+          class="h-10 w-auto"
+          onerror="this.src='../img/logo-compro.png'"
+        />
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Language selector for mobile -->
+        <div class="language-dropdown" id="language-dropdown-mobile">
+          <div class="language-selector" onclick="toggleDropdown('language-dropdown-mobile')">
+            <div class="flag-id" id="current-flag-mobile"></div>
+            <span id="current-text-mobile">ID</span>
+            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="language-dropdown-content">
+            <div class="language-option" onclick="selectLanguage('id')">
+              <div class="flag-id"></div>
+              <span>ID</span>
             </div>
-            
-            <!-- Mobile Menu Button on the right -->
-            <div>
-                <button id="mobile-menu-btn" class="mobile-menu-btn text-gray-700 hover:text-gray-900 focus:outline-none p-2" type="button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+            <div class="language-option" onclick="selectLanguage('en')">
+              <div class="flag-icon"></div>
+              <span>EN</span>
             </div>
+          </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden mt-4 pt-4 border-t border-gray-200">
-            <div class="flex flex-col space-y-3">
-                <a href="index.html" class="nav-link font-medium text-gray-700 block py-2">Home</a>
-                <a href="about.html" class="nav-link font-medium text-gray-700 block py-2">About</a>
-                <a href="products.html" class="nav-link font-medium text-gray-700 block py-2">Products</a>
-                <a href="contact.html" class="nav-link font-medium text-gray-700 block py-2">Contact</a>
-            </div>
-        </div>
-    </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="mobile-menu-btn text-gray-700 hover:text-gray-900 focus:outline-none p-2"
+          type="button"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden mt-4 pt-4 border-t border-gray-200">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html" class="nav-link font-medium text-gray-700 block py-2">Home</a>
+        <a href="about.html" class="nav-link font-medium text-gray-700 block py-2">About</a>
+        <a href="products.html" class="nav-link font-medium text-gray-700 block py-2">Products</a>
+        <a href="contact.html" class="nav-link font-medium text-gray-700 block py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script>
+console.log("📝 Defining global functions...");
+
+// Define global functions immediately - no window prefix needed
+function toggleDropdown(dropdownId) {
+  console.log("🔄 Toggle dropdown:", dropdownId);
+  
+  const dropdown = document.getElementById(dropdownId);
+  if (!dropdown) {
+    console.error("❌ Dropdown not found:", dropdownId);
+    return;
+  }
+
+  // Close other dropdowns first
+  document.querySelectorAll(".language-dropdown").forEach((d) => {
+    if (d !== dropdown && d.classList.contains("active")) {
+      d.classList.remove("active");
+      console.log("🔒 Closed other dropdown");
+    }
+  });
+  
+  // Toggle current dropdown
+  const wasActive = dropdown.classList.contains("active");
+  dropdown.classList.toggle("active");
+  
+  console.log(`🎯 Dropdown ${dropdownId} is now:`, dropdown.classList.contains("active") ? "OPEN" : "CLOSED");
+}
+
+function selectLanguage(lang) {
+  console.log("🌐 Language selected:", lang);
+  
+  // Close all dropdowns immediately
+  document.querySelectorAll(".language-dropdown").forEach((dropdown) => {
+    dropdown.classList.remove("active");
+  });
+
+  // Update display
+  updateLanguageDisplay(lang);
+  
+  // Save to localStorage
+  try {
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem("language", lang);
+      console.log("✅ Language saved:", lang);
+    }
+  } catch (error) {
+    console.warn("⚠️ Could not save to localStorage:", error);
+  }
+  
+  // Optional: reload page after short delay
+  setTimeout(() => {
+    window.location.reload();
+  }, 300);
+}
+
+function updateLanguageDisplay(lang) {
+  const isIndonesian = lang === "id";
+  console.log("🔄 Updating display for:", lang);
+
+  // Update desktop
+  const desktopText = document.getElementById("current-text-desktop");
+  const desktopFlag = document.getElementById("current-flag-desktop");
+  if (desktopText) desktopText.textContent = isIndonesian ? "ID" : "EN";
+  if (desktopFlag) desktopFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+
+  // Update mobile
+  const mobileText = document.getElementById("current-text-mobile");
+  const mobileFlag = document.getElementById("current-flag-mobile");
+  if (mobileText) mobileText.textContent = isIndonesian ? "ID" : "EN";
+  if (mobileFlag) mobileFlag.className = isIndonesian ? "flag-id" : "flag-icon";
+}
+
+function initializeLanguage() {
+  console.log("🚀 Initializing language system");
+  
+  // Get saved language
+  let savedLang = "id";
+  try {
+    if (typeof(Storage) !== "undefined") {
+      savedLang = localStorage.getItem("language") || "id";
+    }
+  } catch (error) {
+    console.warn("⚠️ Could not read from localStorage:", error);
+  }
+  
+  console.log("📖 Loaded language:", savedLang);
+  updateLanguageDisplay(savedLang);
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".language-dropdown")) {
+      document.querySelectorAll(".language-dropdown").forEach((dropdown) => {
+        if (dropdown.classList.contains("active")) {
+          dropdown.classList.remove("active");
+          console.log("🔒 Closed dropdown on outside click");
+        }
+      });
+    }
+  });
+  
+  console.log("✅ Language system ready");
+}
+
+// Initialize when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeLanguage);
+} else {
+  initializeLanguage();
+}
+
+// Also initialize after a short delay (for AJAX loaded content)
+setTimeout(function() {
+  if (typeof initializeLanguage === 'function') {
+    initializeLanguage();
+  }
+}, 800);
+
+console.log("📝 Header script loaded successfully - functions ready!");
+</script>
